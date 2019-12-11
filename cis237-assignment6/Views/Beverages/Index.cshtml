@@ -6,6 +6,44 @@
 
 <h2>Index</h2>
 
+<div class="form-group">
+    <fieldset>
+        <legend> Search Filter </legend>
+        @{
+            @*Open up a form that will go to the Filter method
+            on the Beverages controller with a POST request*@
+            using (Html.BeginForm(
+                "Filter", //Action (method) to submit the form to
+                "Beverages", //Controller to submit form to
+                FormMethod.Post, //Request method which is POST
+                new { @class = "form-inline" } //Will add css class
+            ))
+            {
+                @*Render out an AntiForgery Token for the form*@
+                @Html.AntiForgeryToken()
+
+                <label for="name">Name</label>
+                @Html.TextBox("name", (string)ViewBag.filterName)
+                <label for="pack">Pack</label>
+                @Html.TextBox("pack", (string)ViewBag.filterPack)
+                <label for="min">Min Price</label>
+                @Html.TextBox("min", (string)ViewBag.filterMin)
+                <label for="max">Max Price</label>
+                @Html.TextBox("max", (string)ViewBag.filterMax)
+
+
+                <input type="submit"
+                       value="filter"
+                       class="btn btn-info pull-right" />
+            }
+
+        }
+    </fieldset>
+</div>
+
+<br />
+<br />
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -26,26 +64,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pack)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.active)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.active)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
 
 </table>
