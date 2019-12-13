@@ -2,7 +2,7 @@
 
 ## Due: 12-13-2019
 
-## Author
+## Author: Stephanie Amo
 
 
 
@@ -135,6 +135,8 @@ the culprit, but I don't know which ones.
 
 ## Outside Resources Used
 
-
+N/A
 
 ## Known Problems, Issues, And/Or Errors in the Program
+
+N/A
