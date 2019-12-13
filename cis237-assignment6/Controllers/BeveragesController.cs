@@ -8,6 +8,10 @@ using System.Web;
 using System.Web.Mvc;
 using cis237_assignment6.Models;
 
+//Stephanie Amo
+//Project 6
+//Due: 12/13/2019
+
 namespace cis237_assignment6.Controllers
 {
     [Authorize] // Ensures that the user must be authenticated in the system.

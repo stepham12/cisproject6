@@ -6,6 +6,10 @@ namespace cis237_assignment6.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    //Stephanie Amo
+    //Project 6
+    //Due: 12/13/2019
+
     public partial class Beverage
     {
         [StringLength(10)]
